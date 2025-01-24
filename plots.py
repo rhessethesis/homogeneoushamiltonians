@@ -52,7 +52,7 @@ x, y = symbols('x y')
 #the hamiltonian we want to compute the flow of
 #----------------------------------------------
 #h = ((x**4+y**4)**(1/2))*(x**2+y**2)/((x**32+y**32)**(1/16)) #a good one 
-#h = (x**6+6*y**6)**(1/3)-(x**4+y**4)**(1/2) #the first non-globally describable example
+#h = (x**6+6*y**6)**(1/3)-(x**4+y**4)**(1/2) #non-globally describable example
 #h = ((1/4)*x**6+24*y**6)**(1/3)-(x**2+y**2) #faster degenerating example
 h = (x**26+y**26)**(1/13)
 
@@ -164,7 +164,7 @@ def animate(self):
         norm = (p_y[j]**2+p_x[j]**2)**(1/2) #record norm of the points after moving them
         new_radius.append(norm)
         phi_prime.append((1/norm)**(1/2)) #cheat: use math to avoid numerical calculation of the derivative of \widetilde{\phi} 
-                                          #(place for investigating stability of the algorithm)
+                                          
     c_x=p_x
     c_y=p_y
     
